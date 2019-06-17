@@ -3,7 +3,7 @@ import Error from './error';
 
 function Question(props) {
 
-  const { saveBudget, saveQuestionBudget } = props;
+  const { saveBudget, saveQuestionBudget, saveRemaining } = props;
 
   // definir el state
   const [ quantity, saveQuantity ] = useState(0);
@@ -19,6 +19,7 @@ function Question(props) {
 
     // Si se pasa la validacion
     saveBudget(quantity);
+    saveRemaining(quantity);
     saveError(false);
     saveQuestionBudget(false);
   }
