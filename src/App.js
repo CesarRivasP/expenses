@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Question from './components/question';
 import Form from './components/form';
+import List from './components/list';
 
 function App() {
 
@@ -10,6 +11,14 @@ function App() {
 
   const [expense, saveExpense] = useState({});
   const [expenses, saveExpenses] = useState([]);
+
+
+    useEffect(() => {
+      //copia del state
+      const expensesList = [...expenses, expense];
+      saveExpenses(expensesList);
+    }, [])
+
 
   return (
     <div className="App container">
@@ -26,7 +35,7 @@ function App() {
                 <Form saveExpense={saveExpense} />
               </div>
               <div className="one-half column">
-
+                <List expenses={expenses} />
               </div>
             </div>
         }
