@@ -70,6 +70,14 @@ h2 {
   color: #424242;
 }
 
+.button-style {
+  color: white !important;
+  padding-left: 5px !important;
+  margin-right: 5px !important;
+  padding-right: 5px !important;
+  border-color: transparent !important;
+}
+
 .error {
   text-align: center;
 }
@@ -83,15 +91,15 @@ h2 {
 }
 
 .alert-primary {
-  color: #004085;
-  background-color: #cce5ff;
-  border-color: #b8daff;
+  color: #FFFFFF;
+  background-color: #74b9ff;
+  border-color: #74b9ff;
 }
 
 .alert-success {
-  color: #155724;
-  background-color: #d4edda;
-  border-color: #c3e6cb;
+  color: #FFFFFF;
+  background-color: #58B19F;
+  border-color: #58B19F;
 }
 
 .alert-danger {
@@ -101,9 +109,14 @@ h2 {
 }
 
 .alert-warning {
-  color: #856404;
-  background-color: #fff3cd;
-  border-color: #ffeeba;
+  color: white;
+  background-color: #ffa801;
+  border-color: #ffa801;
+}
+
+.expense-title{
+  margin-left: 10px;
+  font-size: 18px;
 }
 
 .gastos-realizados  {
@@ -129,8 +142,50 @@ h2 {
   color: white;
 }
 
-.gastos-realizados li p .gasto {
-  background-color: #40739e;
+.gastos .expense-title {
   padding: 1rem;
   color:white;
+}
+
+@media (max-width: 1900px) {
+  .gasto{
+    padding: 1rem;
+    background-color: #40739e;
+    color:white;
+    margin-left: 14rem;
+  }
+}
+
+@media (max-width: 1100px) {
+  .gasto{
+    padding: 1rem;
+    background-color: #40739e;
+    color:white;
+    margin-left: 8rem;
+  }
+}
+@media (max-width: 920px) {
+  .gasto{
+    padding: 1rem;
+    background-color: #40739e;
+    color:white;
+    margin-left: 5rem;
+  }
+}
+@media (max-width: 860px) {
+  .gasto{
+    padding: 1rem;
+    background-color: #40739e;
+    color:white;
+    margin-left: 3rem;
+  }
+}
+
+@media (max-width: 780px) {
+  .gasto{
+    padding: 1rem;
+    background-color: #40739e;
+    color:white;
+    margin-left: 1rem;
+  }
 }
