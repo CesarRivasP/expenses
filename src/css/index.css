@@ -61,8 +61,13 @@ h2 {
   text-align: center;
 }
 
-.campo {
+.expense {
   margin-bottom: 2rem;
+  color: white;
+}
+
+.expense input{
+  color: #424242;
 }
 
 .error {
