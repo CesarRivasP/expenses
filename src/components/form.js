@@ -3,6 +3,7 @@ import shortid from 'shortid'; //shortid genera id, pero mas cortos que los de u
 import Error from './error';
 
 function Form(props){
+  const { saveExpense, saveCreateExpense } = props;
 
   const [nameExpense, saveNameExpense] = useState('');
   const [quantityExpense, saveQuantityExpense] = useState(0);
@@ -25,7 +26,8 @@ function Form(props){
     };
 
     // pasar el gasto al componente principal
-    props.saveExpense(expense);
+    saveExpense(expense);
+    saveCreateExpense(true);
     saveError(false);
 
     // Resetear el formulario
