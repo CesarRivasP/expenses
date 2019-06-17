@@ -8,6 +8,9 @@ function App() {
 
   const [ questionBudget, saveQuestionBudget] = useState(true)
 
+  const [expense, saveExpense] = useState({});
+  const [expenses, saveExpenses] = useState([]);
+
   return (
     <div className="App container">
       <header>
@@ -20,7 +23,7 @@ function App() {
             :
             <div className="row">
               <div className="one-half column">
-                <Form />
+                <Form saveExpense={saveExpense} />
               </div>
               <div className="one-half column">
 
