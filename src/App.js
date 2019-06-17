@@ -6,18 +6,21 @@ import List from './components/list';
 function App() {
 
   const [budget, saveBudget] = useState(0);
-
   const [ questionBudget, saveQuestionBudget] = useState(true)
-
+  const [createExpense, saveCreateExpense] = useState(false);
   const [expense, saveExpense] = useState({});
   const [expenses, saveExpenses] = useState([]);
 
-
-    useEffect(() => {
+  useEffect(() => {
+    if(createExpense){
       //copia del state
       const expensesList = [...expenses, expense];
       saveExpenses(expensesList);
-    }, [])
+
+      // una vez que se agrega, hay que cambiarlo a false nuevamente
+      saveCreateExpense(false);
+    }
+  }, [createExpense])
 
 
   return (
@@ -32,7 +35,7 @@ function App() {
             :
             <div className="row">
               <div className="one-half column">
-                <Form saveExpense={saveExpense} />
+                <Form saveExpense={saveExpense} saveCreateExpense={saveCreateExpense} />
               </div>
               <div className="one-half column">
                 <List expenses={expenses} />
