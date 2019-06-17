@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Question from './components/question';
 import Form from './components/form';
 import List from './components/list';
+import ControlBudget from './components/budget-control.js';
 
 function App() {
 
@@ -10,6 +11,7 @@ function App() {
   const [createExpense, saveCreateExpense] = useState(false);
   const [expense, saveExpense] = useState({});
   const [expenses, saveExpenses] = useState([]);
+  const [remaining, saveRemaining] = useState(0);
 
   useEffect(() => {
     if(createExpense){
@@ -31,7 +33,11 @@ function App() {
       <div className="contenido-principal contenido">
         {
           questionBudget ?
-            <Question saveBudget={saveBudget} saveQuestionBudget={saveQuestionBudget} /> /* Para que despliegue al inicio */
+            <Question /* Para que despliegue al inicio */
+              saveBudget={saveBudget}
+              saveQuestionBudget={saveQuestionBudget}
+              saveRemaining={saveRemaining}
+            />
             :
             <div className="row">
               <div className="one-half column">
@@ -39,6 +45,7 @@ function App() {
               </div>
               <div className="one-half column">
                 <List expenses={expenses} />
+                <ControlBudget budget={budget} remaining={remaining} />
               </div>
             </div>
         }
