@@ -1,4 +1,5 @@
 import React, { Fragment, useState } from 'react';
+import Error from './error';
 
 function Question(props) {
 
@@ -26,7 +27,8 @@ function Question(props) {
     <Fragment>
       <h2>Ingresa tu presupuesto</h2>
 
-      { error && <p className="alert alert-danger error">El presupuesto es incorrecto</p> }
+      {/* { error && <p className="alert alert-danger error">El presupuesto es incorrecto</p> } */}
+      { error && <Error message="El presupuesto es incorrecto" />}
 
       <form onSubmit={addedBudget}>
         <input
