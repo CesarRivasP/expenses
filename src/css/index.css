@@ -126,10 +126,11 @@ h2 {
   justify-content: space-between;
   align-items: center;
   margin:0;
+  color: white;
 }
 
 .gastos-realizados li p .gasto {
-  background-color: #004085;
+  background-color: #c0392b;
   padding: 1rem;
   color:white;
 }
