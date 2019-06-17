@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Question from './components/question';
-// import Form from './components/form';
+import Form from './components/form';
 
 function App() {
 
@@ -20,7 +20,7 @@ function App() {
             :
             <div className="row">
               <div className="one-half column">
-                <p>Formulario</p>
+                <Form />
               </div>
               <div className="one-half column">
 
